@@ -21,7 +21,8 @@ virtualenv
 authbind
 
 
-
+sudo nano /etc/ssh/sshd_config
+#change default port  to any number..ex.5555
 sudo adduser --disabled-password cowrie
 
 sudo touch /etc/authbind/byport/22
@@ -37,6 +38,7 @@ sudo chmod 777 /etc/authbind/byport/22
 
 
 su cowrie
+git clone http://github.com/cowrie/cowrie
 
 cd /home/cowrie/cowrie
 
