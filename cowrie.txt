@@ -1,0 +1,75 @@
+cowrie dependencies...
+
+sudo apt-get  install 
+
+git 
+
+python-virtualenv
+
+libssl-dev
+
+libffi-dev
+
+build-essential
+
+libpython3-dev
+
+python3-minimal
+
+virtualenv
+
+authbind
+
+
+
+sudo adduser --disabled-password cowrie
+
+sudo touch /etc/authbind/byport/22
+
+sudo chown cowrie:cowrie /etc/authbind/byport/22
+
+
+
+sudo chmod 777 /etc/authbind/byport/22
+
+
+
+
+
+su cowrie
+
+cd /home/cowrie/cowrie
+
+virtualenv --python=python3 cowrie-env
+
+
+
+source cowrie-env/bin/activate
+
+pip install --upgrade pip
+
+pip install --upgrade -r requirments.txt
+
+cp etc/cowrie.cfg.dist etc/cowrie.cfg
+
+nano etc/cowrie.cfg
+
+listen_endpoints=tcp:22:interface=0.0.0.0
+
+nano etc/userdb.txt
+
+root:x:!12345
+
+root:x:*
+
+bin/cowrie status
+
+bin/cowrie start
+
+ ss -ant
+
+
+
+ON 2nd machine
+
+ssh -o UserknownHostsFile=/dev/null -o StrictHostkeyChecking=no root@192.168.80.128(ip of cowrie machine)
