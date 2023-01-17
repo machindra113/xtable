@@ -8,7 +8,7 @@ echo -e "127.0.0.1	localhost \n  127.0.0.1	subname.domain.com	sub" > /etc/hosts
 echo subname > /etc/hostname
 ps
 apt-get install -y apache2 apache2-utils autoconf gcc libc6 libgd-dev make  php python python3 unzip wget
-apt-get install -y automake autotools-dev bc build-essential dc gawk gettext libnet-snmp-perl libssl-dev snmp 
+apt-get install -y automake autotools-dev bc build-essential dc gawk gettext libmcrypt-dev libnet-snmp-perl libssl-dev snmp 
 
 sed -i '/allow-hotplug ens33/c\auto ens33' /etc/network/interfaces 
 sed -i '/iface ens33 inet dhcp/c\iface ens33 inet static' /etc/network/interfaces
