@@ -75,4 +75,4 @@ bin/cowrie start
 ON 2nd machine
 
 ssh -o UserknownHostsFile=/dev/null -o StrictHostkeyChecking=no root@192.168.80.128(ip of cowrie machine)
-on first machine run tail -f /home/cowrie/cowrie/var/log/cowrie.log
+on first machine run tail -f /home/cowrie/cowrie/var/log/cowrie/cowrie.log
